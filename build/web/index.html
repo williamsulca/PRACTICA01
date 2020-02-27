@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       
+        <button onclick="consultar()">Consultar</button>
+        <br>
+        <table id="myTable" cellpadding="1" border="1" style="border-collapse:collapse; width:100%; text-align: center;">
+            <tr>
+                <th>id_restaurante</th>
+                <th>nombre</th>
+                <th>precio</th>
+                <th>categoria</th>
+            </tr> 
+          
+
+        </table>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript">
+            function Consultar(btn, id_restaurante){
+                console.log(id_restaurante);
+                var respuesta = prompt('Escribe ok si deseas borrar');
+                if(respuesta == 'OK'){
+                    var fila = btn.closest('tr');
+                    //LLAMAR AL JAVA
+                    $.ajax({
+                        method : 'POST',
+                        url : "MostrarServlet",
+                        data : {
+                            id_res : id_restaurante
+                        },
+                        success: function (msg) {
+                            console.log(msg);
+                            fila.remove();
+                                    alert(msg,mensaje);
+                        
+                    },
+                    error : function(msg){
+                        console.error(msg);
+                    }
+                        
+                    }
+                            
+                    );
+                }
+                
+            }
+         
+            function consultar(){
+                $.ajax({
+                    method : 'POST',
+                    url : 'MostrarServlet',
+                    success : function(msg){
+                        console.log(
+                                );
+                        var table = document.getElementById("myTable");
+                        for (var i = 0; i < msg.length; i++) {
+                              console.log(msg[i]);  
+                                var fila = table.insertRow(1);
+                                var celda0 = fila.insertCell(0);
+                                var celda1 = fila.insertCell(1);
+                                var celda2 = fila.insertCell(2);
+                                var celda3 = fila.insertCell(3);
+                                
+                                
+                                celda0.innerHTML = msg[i].id_restaurante;
+                                celda1.innerHTML = msg[i].nombre;
+                                celda2.innerHTML = msg[i].precio;
+                                celda3.innerHTML = msg[i].categoria;
+                                
+                                
+                        }
+
+                    },
+                    error : function(msg){
+                        console.error(msg);
+                    }
+               });
+            }
+       
+        </script>
+    </body>
+</html>

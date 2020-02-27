@@ -1,0 +1,39 @@
+Las preguntas teóricas ponerlas en un archivo respuestas.txt ubicada dentro del proyecto (pregunta 5), subirlo a github.com.
+
+1.¿Cuántas secciones tiene una clase?, señale cuáles son obligatorias y cuáles no. Dibuja un ejemplo.
+
+- Tiene 3 publica, privada,protegida
+
+2.Declare un array en Java y asígnele valores.
+
+int array[ ] = new int[ ] {4,5,6,7,8,9};
+
+2.1 ¿Cómo obtengo el primer elemento del array?
+for(int i=0; i<primerelemento.length; i++){
+		System.out.println("primer elemento:"+ primer elemento());
+	}
+ 
+
+2.2 ¿y el último?
+for(int i=0; i<array.length;i++){
+System.out.println("ultimoelemnto:"+ ());
+}
+
+2.3 ¿Con qué estructura de control se itera/recorre un array? de un ejemplo.
+
+for (int i = 0; i < array.length; i++) {
+
+
+3. ¿Qué son los request y response?
+
+Response: Es un objeto, y sirve para presentar en la pantalla del navegador del cliente el resultado de cualquier código que hayamos escrito.
+Request: El request es un objeto y permite el acceso a toda la información que pasa desde el cliente navegador del cliente al servidor, al recibir la inforamación, es repartida y almacenada.
+
+4. ¿Qué son los códigos HTTP (200, 400, 500) ?
+
+200: Es un codigo de respuesta del servidor HTTP que nos ofrece el estatus estandar correcto a la que puede responder sin problemas, la peticion sera enviada y si fue recibida correctamente puede ser atentida y contestada por este.
+400: Es la respuesta de un código de estado HTTP, que indica que el servidor no puede o no procesará la petición debido a un error.
+500: Es un código de estado HTTP que significa que algo salió mal en el servidor del sitio web, pero el servidor no sabra cual es el problema exacto.
+
+5. Diferencias entre GET y POST.
+- La diferencia entre get y post radica en la forma de enviar datos de un formulario.
